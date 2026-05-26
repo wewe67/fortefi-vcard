@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>William Toni</title>
-
 <style>
 body {
   margin:0;
@@ -16,7 +15,6 @@ body {
   align-items:center;
   height:100vh;
 }
-
 .card {
   background: rgba(255,255,255,0.06);
   padding:40px;
@@ -25,11 +23,9 @@ body {
   width:320px;
   backdrop-filter: blur(10px);
 }
-
 h1 {margin:0;font-size:22px;}
 p {color:#cbd5e1;font-size:14px;}
-
-a.button {
+.button {
   display:inline-block;
   margin-top:20px;
   padding:12px 16px;
@@ -38,18 +34,61 @@ a.button {
   text-decoration:none;
   border-radius:10px;
   font-weight:bold;
+  cursor:pointer;
+  border:none;
+  font-size:1rem;
+}
+.button:disabled {
+  opacity:0.6;
+  cursor:not-allowed;
 }
 </style>
 </head>
-
 <body>
 <div class="card">
   <h1>William Toni</h1>
-  <p>Executive, Investment Intelligence & Automation</p>
-
-  <a class="button" href="vcf/william.vcf">
+  <p>Executive, Investment Intelligence &amp; Automation</p>
+  <button class="button" onclick="saveContact(this, 'vcf/william.vcf')">
     📇 Save Contact
-  </a>
+  </button>
 </div>
+
+<script>
+function saveContact(btn, vcfPath) {
+  btn.disabled = true;
+  btn.textContent = 'Opening...';
+
+  var isAndroid = /android/i.test(navigator.userAgent);
+
+  if (isAndroid) {
+    fetch(vcfPath)
+      .then(function(res) { return res.text(); })
+      .then(function(vcfText) {
+        var blob = new Blob([vcfText], { type: 'text/vcard' });
+        var url = URL.createObjectURL(blob);
+        window.location.href = url;
+        setTimeout(function() { URL.revokeObjectURL(url); }, 5000);
+      })
+      .catch(function() {
+        // fallback to direct link
+        window.location.href = vcfPath;
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = '📇 Save Contact';
+      });
+  } else {
+    // Desktop / iOS: direct link works fine
+    var a = document.createElement('a');
+    a.href = vcfPath;
+    a.download = 'william.vcf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    btn.disabled = false;
+    btn.textContent = '📇 Save Contact';
+  }
+}
+</script>
 </body>
 </html>
