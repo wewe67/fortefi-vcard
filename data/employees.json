@@ -1,0 +1,56 @@
+[
+  {
+    "id": "wtoni",
+    "name": "William Toni",
+    "title": "Executive, Investment Intelligence & Automation",
+    "email": "william@fortefi.com.my",
+    "phone": "+60 10-2794-386",
+    "linkedin": "https://www.linkedin.com/in/william-tonii",
+    "tagline": "Liquidity, on your terms."
+  },
+  {
+    "id": "irkuan",
+    "name": "Irvin Kuan",
+    "title": "Director, Digital Investment Manager",
+    "email": "irvinkuan@fortefi.com.my",
+    "phone": "+60 11-5164-1701",
+    "linkedin": "https://www.linkedin.com/in/irvin-kuan-720b4834/",
+    "tagline": "Liquidity, on your terms."
+  },
+  {
+    "id": "george",
+    "name": "Yap Eng Tee, George",
+    "title": "Head of Strategic Partnership and Digital Operations",
+    "email": "et.y@fortefi.com.my",
+    "phone": "+60 17-251-3820",
+    "linkedin": "https://www.linkedin.com/in/eng-tee-yap-01730057/",
+    "tagline": "Liquidity, on your terms."
+  },
+  {
+    "id": "dennis",
+    "name": "Dennis Lee Kwang Hua",
+    "title": "Strategic Investment Advisor, Digital Investment Manager",
+    "email": "dl@fortefi.com.my",
+    "phone": "+60 12-331-9023",
+    "linkedin": "",
+    "tagline": "Liquidity, on your terms."
+  },
+  {
+    "id": "callista",
+    "name": "Callista Felicia Rivani",
+    "title": "Executive, Business Development",
+    "email": "callista@fortefi.com.my",
+    "phone": "+60 11-2638-9582",
+    "linkedin": "https://www.linkedin.com/in/callista-felicia-rivani/",
+    "tagline": "Liquidity, on your terms."
+  },
+  {
+    "id": "aupeng",
+    "name": "Au Yong Wai Peng",
+    "title": "Director, Finance & Strategy",
+    "email": "waipeng.ay@fortefi.com.my",
+    "phone": "+60 17-6701-958",
+    "linkedin": "https://www.linkedin.com/in/wai-peng-au-yong-817223124/",
+    "tagline": "Liquidity, on your terms."
+  }
+]

@@ -1,0 +1,16 @@
+# Secrets — never commit
+admin_secret.local.txt
+
+# Real referral submissions & generated vault (contain client/referral personal data)
+data/referrals.json
+obsidian_export/obsidian-vault/
+
+# Archived old claude.ai draft
+_old_claude_ai_draft/
+
+# Tooling / caches
+.wrangler/
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store

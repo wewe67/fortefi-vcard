@@ -1,0 +1,9 @@
+# Cloudflare Pages configuration — deploy with:  npx wrangler pages deploy
+name = "fortefi-map"
+compatibility_date = "2026-06-01"
+pages_build_output_dir = "frontend"
+
+# Referral submissions live here (free tier: 1 GB, 100k reads/day).
+[[kv_namespaces]]
+binding = "REFERRALS"
+id = "52520ac912cb440c8726305147c87a58"

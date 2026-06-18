@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fortéfi Digital Card</title>
+  <meta name="description" content="Fortéfi Capital digital business card." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Zalando+Sans+Expanded:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#02403D" />
+</head>
+<body>
+  <!-- brand strip -->
+  <header class="brand">
+    <img class="logo" src="assets/fortefi-logo.png" alt="Fortéfi" />
+  </header>
+
+  <!-- vCard -->
+  <main class="shell">
+    <section class="card" aria-labelledby="emp-name">
+      <img class="card-watermark" src="assets/fortefi-mark.png" alt="" aria-hidden="true" />
+      <p class="eyebrow">Fortéfi Capital Sdn. Bhd.</p>
+      <h1 class="name" id="emp-name"></h1>
+      <p class="role" id="emp-role"></p>
+      <p class="tagline" id="emp-tagline"></p>
+
+      <hr class="divider" />
+
+      <nav class="contact" id="contact-rows" aria-label="Contact details"></nav>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="save-contact">Save contact</button>
+        <button class="btn btn-ghost" id="open-referral">Refer a connection</button>
+      </div>
+
+      <p class="legal">Fortéfi Capital Sdn. Bhd. 195901000261 (1001-M)<br />
+         Securities Commission licence CMSL/A0411/2026</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Fortéfi handles personal data under Malaysia&rsquo;s PDPA.
+       Anyone you refer can ask to be removed at any time.
+       <a href="#" id="privacy-link">Read how we use referrals.</a></p>
+  </footer>
+
+  <!-- referral panel -->
+  <div class="panel-backdrop" id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title">
+    <div class="panel">
+
+      <!-- STEP 1 · choose a source -->
+      <div id="source-view">
+        <h2 id="panel-title">Introduce us to someone</h2>
+        <p class="lede">Share up to five people who&rsquo;d benefit from Fortéfi&rsquo;s treasury
+           and portfolio services. Pick them from your contacts in a couple of clicks.
+           You choose exactly who, and nothing is shared until you confirm.</p>
+
+        <details class="notice">
+          <summary>What we collect and why</summary>
+          <div class="notice-body">
+            <p>If you connect an account or upload a contacts file, the list is shown
+               <strong>only to you, on this device</strong>, so you can choose who to share.
+               We do not see or store that list.</p>
+            <p>Fortéfi only ever receives the people you tick and confirm, up to five in total,
+               with the details shown on the confirmation screen.</p>
+            <p>We use those details to make a warm introduction about Fortéfi&rsquo;s services.
+               We will tell each person who referred them, and anyone can ask us to delete
+               their details at any time.</p>
+          </div>
+        </details>
+
+        <div class="sources">
+          <button class="source-btn" id="src-m365" type="button">
+            <span class="source-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="9.5" height="9.5" fill="currentColor"/><rect x="12.5" y="2" width="9.5" height="9.5" fill="currentColor" opacity="0.75"/><rect x="2" y="12.5" width="9.5" height="9.5" fill="currentColor" opacity="0.75"/><rect x="12.5" y="12.5" width="9.5" height="9.5" fill="currentColor" opacity="0.55"/></svg>
+            </span>
+            <span class="source-text">
+              <span class="source-title">Connect Microsoft 365</span>
+              <span class="source-sub">One sign-in popup. We suggest your closest contacts, ranked by Microsoft.</span>
+            </span>
+          </button>
+
+          <button class="source-btn" id="src-picker" type="button" hidden>
+            <span class="source-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><circle cx="12" cy="10" r="2.4"/><path d="M8.5 16.5c.8-1.6 2-2.4 3.5-2.4s2.7.8 3.5 2.4"/></svg>
+            </span>
+            <span class="source-text">
+              <span class="source-title">Pick from phone contacts</span>
+              <span class="source-sub">Opens your phone&rsquo;s own contact picker. Only the people you select are shared.</span>
+            </span>
+          </button>
+
+          <button class="source-btn" id="src-csv" type="button">
+            <span class="source-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0 4 4m-4-4L8 8"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+            </span>
+            <span class="source-text">
+              <span class="source-title">Upload a contacts file</span>
+              <span class="source-sub">CSV export from Outlook, Gmail or LinkedIn, read on this device only.</span>
+            </span>
+          </button>
+          <input type="file" id="csv-input" accept=".csv,text/csv" hidden />
+
+          <button class="source-btn" id="src-manual" type="button">
+            <span class="source-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </span>
+            <span class="source-text">
+              <span class="source-title">Type them in myself</span>
+              <span class="source-sub">No accounts and no uploads. Just write the names.</span>
+            </span>
+          </button>
+        </div>
+
+        <p class="form-msg" id="source-msg" role="status" aria-live="polite"></p>
+      </div>
+
+      <!-- STEP 2 · pick up to 5 from suggestions -->
+      <div id="pick-view" hidden>
+        <h2>Choose up to five</h2>
+        <p class="lede" id="pick-lede">Tick the people you&rsquo;re happy to introduce.
+           This list is only visible to you. Fortéfi receives just the ones you confirm.</p>
+
+        <div class="field">
+          <label for="pick-search" class="visually-hidden">Search contacts</label>
+          <input type="search" id="pick-search" placeholder="Search by name, company or email…" />
+        </div>
+
+        <div class="pick-count" id="pick-count">0 of 5 selected</div>
+        <div class="pick-list" id="pick-list" role="listbox" aria-multiselectable="true"></div>
+
+        <div class="panel-actions">
+          <button class="btn btn-ghost" id="pick-back" type="button">Back</button>
+          <button class="btn btn-primary" id="pick-continue" type="button" disabled>Continue</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 · review, edit, consent -->
+      <div id="form-view" hidden>
+        <h2>Confirm your introductions</h2>
+        <p class="lede">Check the details, edit anything, remove anyone. Only what you
+           see here is sent to Fortéfi.</p>
+
+        <p class="subhead">Your details</p>
+        <div class="field">
+          <label for="client-name">Your name</label>
+          <input type="text" id="client-name" autocomplete="name" placeholder="e.g. Aisyah Rahman" />
+        </div>
+        <div class="ref-grid">
+          <div class="field">
+            <label for="client-company">Your company (optional)</label>
+            <input type="text" id="client-company" autocomplete="organization" placeholder="Company" />
+          </div>
+          <div class="field">
+            <label for="client-email">Your email (optional)</label>
+            <input type="email" id="client-email" autocomplete="email" placeholder="you@example.com" />
+          </div>
+        </div>
+
+        <p class="subhead">People you&rsquo;re introducing</p>
+        <p class="subhead-hint">Up to five. Add, edit or remove as you like.</p>
+        <div id="ref-list"></div>
+        <button class="add-ref" id="add-ref" type="button">+ Add another person</button>
+
+        <div class="consent">
+          <input type="checkbox" id="consent" />
+          <label for="consent">
+            I&rsquo;m happy for Fortéfi to contact these people about its services, and
+            I have permission to share their details or will personally introduce them.
+            I understand each person will be told I referred them and can ask to be
+            removed at any time.
+          </label>
+        </div>
+
+        <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+
+        <div class="panel-actions">
+          <button class="btn btn-ghost" id="form-back" type="button">Back</button>
+          <button class="btn btn-primary" id="submit-referral" type="button">Send introductions</button>
+        </div>
+      </div>
+
+      <!-- success view -->
+      <div id="done-view" class="done" hidden>
+        <div class="check" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2>Thank you</h2>
+        <p id="done-msg">Your introductions have been sent to the team.</p>
+        <button class="btn btn-primary" id="close-done" type="button" style="max-width:220px;margin:0 auto;">Done</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

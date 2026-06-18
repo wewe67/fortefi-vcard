@@ -1,0 +1,73 @@
+[
+  {
+    "submission_id": "sub_example1",
+    "employee_id": "wsuryanto",
+    "submitted_at": "2026-06-01T03:21:00+00:00",
+    "source": "m365",
+    "client": {
+      "name": "Aisyah Rahman",
+      "company": "Selatan Industries Sdn. Bhd.",
+      "email": "aisyah@selatan.example"
+    },
+    "consent": {
+      "has_permission_or_will_introduce": true,
+      "consent_text_version": "2026-06-10",
+      "ip_recorded": false
+    },
+    "referrals": [
+      {
+        "name": "Daniel Wong",
+        "email": "daniel.wong@harbourview.example",
+        "phone": "+60 12-111 2222",
+        "designation": "Finance Director",
+        "company": "Harbourview Logistics"
+      },
+      {
+        "name": "Priya Nair",
+        "email": "priya@nairgroup.example",
+        "phone": "",
+        "designation": "Managing Director",
+        "company": "Nair Group"
+      },
+      {
+        "name": "Marcus Lim",
+        "email": "marcus.lim@stonebridge.example",
+        "phone": "+60 17-333 4444",
+        "designation": "CFO",
+        "company": "Stonebridge Manufacturing"
+      }
+    ]
+  },
+  {
+    "submission_id": "sub_example2",
+    "employee_id": "wsuryanto",
+    "submitted_at": "2026-06-03T07:45:00+00:00",
+    "source": "csv",
+    "client": {
+      "name": "Daniel Wong",
+      "company": "Harbourview Logistics",
+      "email": "daniel.wong@harbourview.example"
+    },
+    "consent": {
+      "has_permission_or_will_introduce": true,
+      "consent_text_version": "2026-06-10",
+      "ip_recorded": false
+    },
+    "referrals": [
+      {
+        "name": "Priya Nair",
+        "email": "priya@nairgroup.example",
+        "phone": "",
+        "designation": "Managing Director",
+        "company": "Nair Group"
+      },
+      {
+        "name": "Sofia Chen",
+        "email": "sofia@meridianfreight.example",
+        "phone": "+60 19-555 6666",
+        "designation": "Head of Treasury",
+        "company": "Meridian Freight"
+      }
+    ]
+  }
+]
