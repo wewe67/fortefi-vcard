@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+  GitHub Pages redirect shim.
+  The old static vCards (william.html, irvin.html, ...) were replaced by the
+  Cloudflare app at https://fortefi-map.pages.dev. GitHub Pages serves this
+  404.html for any path that no longer exists, so we map each old filename to
+  the matching ?emp=<id> card and bounce visitors there.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting to Fortéfi</title>
+  <script>
+    (function () {
+      var SITE = "https://fortefi-map.pages.dev/";
+      var MAP = {
+        william: "wtoni",
+        irvin: "irkuan",
+        george: "george",
+        dennis: "dennis",
+        callista: "callista",
+        aupeng: "aupeng"
+      };
+      var slug = location.pathname.split("/").pop().replace(/\.html$/i, "").toLowerCase();
+      var emp = MAP[slug];
+      location.replace(SITE + (emp ? "?emp=" + emp : ""));
+    })();
+  </script>
+  <meta http-equiv="refresh" content="1;url=https://fortefi-map.pages.dev/" />
+</head>
+<body style="font-family:system-ui,sans-serif;background:#021e1c;color:#f0f7e8;text-align:center;padding:48px 20px;">
+  <p>Taking you to the new Fortéfi card…</p>
+  <p><a href="https://fortefi-map.pages.dev/" style="color:#cdfa14;">Continue</a></p>
+</body>
+</html>
